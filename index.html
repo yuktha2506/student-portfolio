@@ -3,131 +3,322 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yuktha Shree P — Web Developer</title>
+<title>Yuktha Shree P</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 <script defer src="script.js"></script>
+<link rel="icon" type="image/x-icon" href="logo.jpeg">
 </head>
 <body>
 
-<canvas id="bg"></canvas>
+<div id="cur"></div>
+<div id="ring"></div>
+<canvas id="webgl"></canvas>
 
+<!-- COMMAND PALETTE -->
+<div id="cmd-overlay">
+  <div id="cmd-box">
+    <div id="cmd-input-wrap">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="cmd-input" placeholder="Type a command or search..." autocomplete="off" spellcheck="false"/>
+      <span id="cmd-esc">ESC</span>
+    </div>
+    <ul id="cmd-items">
+      <li data-href="#hero"><span>Home</span><span class="cmd-key">↵</span></li>
+      <li data-href="#roles"><span>About & Dev Roles</span><span class="cmd-key">↵</span></li>
+      <li data-href="#metrics"><span>Impact Metrics</span><span class="cmd-key">↵</span></li>
+      <li data-href="#skills"><span>Skills</span><span class="cmd-key">↵</span></li>
+      <li data-href="#projects"><span>Projects</span><span class="cmd-key">↵</span></li>
+      <li data-href="#experience"><span>Experience & Education</span><span class="cmd-key">↵</span></li>
+      <li data-href="#contact"><span>Contact</span><span class="cmd-key">↵</span></li>
+      <li data-href="mailto:yukthashree456@gmail.com"><span>Email me</span><span class="cmd-key">↵</span></li>
+      <li data-href="https://github.com/yuktha2506" target="_blank"><span>GitHub ↗</span><span class="cmd-key">↵</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SIDE DRAWER -->
+<div id="drawer">
+  <div id="drawer-logo">Yuktha</div>
+  <ul>
+    <li><a href="#hero">Home <span class="enter-hint">↵</span></a></li>
+    <li><a href="#roles">Dev Roles <span class="enter-hint">↵</span></a></li>
+    <li><a href="#metrics">Metrics <span class="enter-hint">↵</span></a></li>
+    <li><a href="#skills">Skills <span class="enter-hint">↵</span></a></li>
+    <li><a href="#projects">Projects <span class="enter-hint">↵</span></a></li>
+    <li><a href="#experience">Experience <span class="enter-hint">↵</span></a></li>
+    <li><a href="#contact">Contact <span class="enter-hint">↵</span></a></li>
+  </ul>
+  <div id="drawer-esc">ESC TO CLOSE</div>
+</div>
+
+<!-- NAV -->
 <nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact">Contact</a>
+  <a class="nav-logo" href="#hero">&lt;Yuktha /&gt;</a>
+  <ul class="nav-links">
+    <li><a href="#roles">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-cmd" id="cmd-trigger">
+      Search&nbsp;&nbsp;<kbd>⌘K</kbd>
+    </div>
+    <button class="nav-menu-btn" id="menu-btn">☰</button>
+  </div>
 </nav>
 
-<div class="wrapper">
+<div class="wrap">
 
-  <!-- HERO -->
-  <div class="hero" id="about">
-    <div class="avatar-ring">
-      <div class="avatar-inner">YS</div>
-    </div>
-    <div class="title-badge">✦ Web Developer</div>
-    <h1>Yuktha <span>Shree P</span></h1>
-    <p>B.Tech Computer Science student crafting thoughtful web experiences — from responsive interfaces to AI-powered applications.</p>
-    <div class="hero-links">
-      <a href="https://github.com/yuktha2506" class="btn-primary" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/yuktha-shree-p-3081b92a4/" class="btn-secondary" target="_blank">LinkedIn</a>
-      <a href="mailto:yukthashree456@gmail.com" class="btn-secondary">Email me</a>
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Web Developer · CS Student · Bangalore</div>
+    <h1>Yuktha<br><span class="stroke">Shree P</span></h1>
+    <div class="hero-tagline">// building the web, one component at a time</div>
+    <p class="hero-desc">B.Tech Computer Science student crafting pixel-perfect interfaces, scalable APIs, and AI-powered web experiences — from frontend to full stack.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-p">View Work</a>
+      <a href="https://github.com/yuktha2506" target="_blank" class="btn-o">GitHub ↗</a>
+      <a href="mailto:yukthashree456@gmail.com" class="btn-o">Email Me</a>
     </div>
   </div>
 
-  <!-- SKILLS -->
-  <section id="skills" class="reveal">
-    <div class="section-label">What I know</div>
-    <div class="section-title">Skills & <span>Technologies</span></div>
-    <div class="skills-grid">
-      <div class="skill-pill s0" style="animation-delay:.05s">HTML</div>
-      <div class="skill-pill s1" style="animation-delay:.1s">CSS</div>
-      <div class="skill-pill s3" style="animation-delay:.15s">JavaScript</div>
-      <div class="skill-pill s2" style="animation-delay:.2s">React</div>
-      <div class="skill-pill s4" style="animation-delay:.25s">Node.js</div>
-      <div class="skill-pill s5" style="animation-delay:.3s">Python</div>
-      <div class="skill-pill s0" style="animation-delay:.35s">Java</div>
-      <div class="skill-pill s1" style="animation-delay:.4s">C</div>
-      <div class="skill-pill s3" style="animation-delay:.45s">C++</div>
-      <div class="skill-pill s2" style="animation-delay:.5s">MySQL</div>
+  <div class="hero-card">
+    <div class="hc-avatar">YS</div>
+    <div class="hc-name">Yuktha Shree P</div>
+    <div class="hc-role">Web Developer · Full Stack</div>
+    <div class="hc-tags">
+      <span class="hc-tag">React</span>
+      <span class="hc-tag">Node.js</span>
+      <span class="hc-tag mint">Python</span>
+      <span class="hc-tag mint">MySQL</span>
+      <span class="hc-tag pink">AI / ML</span>
     </div>
-  </section>
+    <div class="hc-divider"></div>
+    <div class="hc-links">
+      <a href="mailto:yukthashree456@gmail.com" class="hc-link"><span class="hc-link-dot"></span>yukthashree456@gmail.com</a>
+      <a href="https://github.com/yuktha2506" target="_blank" class="hc-link"><span class="hc-link-dot"></span>github.com/yuktha2506</a>
+      <a href="https://www.linkedin.com/in/yuktha-shree-p-3081b92a4/" target="_blank" class="hc-link"><span class="hc-link-dot"></span>linkedin.com/in/yuktha-shree-p</a>
+    </div>
+  </div>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="reveal">
-    <div class="section-label">What I've built</div>
-    <div class="section-title">Featured <span>Projects</span></div>
-    <div class="projects-grid">
-      <div class="project-card pc0">
-        <div class="project-icon">🧪</div>
-        <h3>ExperimentHub</h3>
-        <p>A platform for organizing and exploring scientific experiments with an interactive interface.</p>
-      </div>
-      <div class="project-card pc1">
-        <div class="project-icon">🤖</div>
-        <h3>AI Task Manager</h3>
-        <p>Smart task management powered by AI to prioritize, schedule, and track your to-dos.</p>
-      </div>
-      <div class="project-card pc2">
-        <div class="project-icon">🤟</div>
-        <h3>Sign Language Translator</h3>
-        <p>Real-time sign language recognition and translation using computer vision and ML models.</p>
-      </div>
-      <div class="project-card pc3">
-        <div class="project-icon">💬</div>
-        <h3>Emotion Chatbot</h3>
-        <p>A conversational AI that detects user emotions and responds with empathy and context.</p>
-      </div>
-    </div>
-  </section>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    scroll to explore
+  </div>
+</section>
 
-  <!-- EXPERIENCE & EDUCATION -->
-  <section id="experience" class="reveal">
-    <div class="section-label">My journey</div>
-    <div class="section-title">Experience & <span>Education</span></div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="tl-type">Internship</div>
-        <div class="tl-title">Web Developer Intern — Titan Company Limited</div>
-        <div class="tl-sub">1 month · Built and maintained web features in a professional production environment.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-type">Education</div>
-        <div class="tl-title">B.Tech in Computer Science</div>
-        <div class="tl-sub">Specializing in web technologies, AI/ML, and software engineering fundamentals.</div>
-      </div>
-    </div>
-  </section>
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="accent">HTML5</span><span>·</span>
+    <span>CSS3</span><span>·</span>
+    <span class="accent">JavaScript</span><span>·</span>
+    <span>React.js</span><span>·</span>
+    <span class="accent">Node.js</span><span>·</span>
+    <span>Python</span><span>·</span>
+    <span class="accent">MySQL</span><span>·</span>
+    <span>Java</span><span>·</span>
+    <span class="accent">C / C++</span><span>·</span>
+    <span>REST APIs</span><span>·</span>
+    <span class="accent">Responsive Design</span><span>·</span>
+    <span>Git &amp; GitHub</span><span>·</span>
+    <span class="accent">HTML5</span><span>·</span>
+    <span>CSS3</span><span>·</span>
+    <span class="accent">JavaScript</span><span>·</span>
+    <span>React.js</span><span>·</span>
+    <span class="accent">Node.js</span><span>·</span>
+    <span>Python</span><span>·</span>
+    <span class="accent">MySQL</span><span>·</span>
+    <span>Java</span><span>·</span>
+    <span class="accent">C / C++</span><span>·</span>
+    <span>REST APIs</span><span>·</span>
+    <span class="accent">Responsive Design</span><span>·</span>
+    <span>Git &amp; GitHub</span><span>·</span>
+  </div>
+</div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="reveal">
-    <div class="section-label">Let's talk</div>
-    <div class="section-title">Get in <span>Touch</span></div>
-    <div class="contact-grid">
-      <a href="mailto:yukthashree456@gmail.com" class="contact-card cc-email">
-        <div class="icon">✉️</div>
-        <div>
-          <div class="label">Email</div>
-          <div class="value">yukthashree456@gmail.com</div>
-        </div>
-      </a>
-      <a href="https://github.com/yuktha2506" target="_blank" class="contact-card cc-github">
-        <div class="icon">🐙</div>
-        <div>
-          <div class="label">GitHub</div>
-          <div class="value">yuktha2506</div>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/yuktha-shree-p-3081b92a4/" target="_blank" class="contact-card cc-linkedin">
-        <div class="icon">💼</div>
-        <div>
-          <div class="label">LinkedIn</div>
-          <div class="value">Yuktha Shree P</div>
-        </div>
-      </a>
+<!-- ── ROLES ── -->
+<section class="section reveal" id="roles">
+  <div class="sec-tag">What I do</div>
+  <h2 class="sec-title">Frontend, Backend &amp;<br><em>Full Stack</em></h2>
+  <div class="roles-grid">
+    <div class="role-card fe">
+      <div class="role-num">01 /</div>
+      <h3 class="c-lav">Frontend</h3>
+      <div class="role-sub">What users see &amp; feel</div>
+      <p>Crafting responsive, accessible, pixel-perfect interfaces with React. Turning designs into smooth experiences that delight users on every screen.</p>
+      <div class="role-tags">
+        <span class="rtag rt-lav">HTML5</span><span class="rtag rt-lav">CSS3</span>
+        <span class="rtag rt-lav">JavaScript</span><span class="rtag rt-lav">React</span>
+      </div>
+      <div class="role-footer rf-lav">↳ Yuktha's core strength</div>
     </div>
-  </section>
+    <div class="role-card be">
+      <div class="role-num">02 /</div>
+      <h3 class="c-mint">Backend</h3>
+      <div class="role-sub">What powers it all</div>
+      <p>Building reliable REST APIs, managing databases, and implementing auth systems. The invisible engine that makes every user-facing feature work reliably.</p>
+      <div class="role-tags">
+        <span class="rtag rt-mint">Node.js</span><span class="rtag rt-mint">Python</span>
+        <span class="rtag rt-mint">MySQL</span><span class="rtag rt-mint">REST API</span>
+      </div>
+      <div class="role-footer rf-mint">↳ Yuktha's growing skill</div>
+    </div>
+    <div class="role-card fs">
+      <div class="role-num">03 /</div>
+      <h3 class="c-pink">Full Stack</h3>
+      <div class="role-sub">The complete picture</div>
+      <p>Owning end-to-end products — from UI components to database schema. Shipping complete, working features without handoffs or gaps in understanding.</p>
+      <div class="role-tags">
+        <span class="rtag rt-pink">React</span><span class="rtag rt-pink">Node.js</span>
+        <span class="rtag rt-pink">MySQL</span><span class="rtag rt-pink">APIs</span>
+      </div>
+      <div class="role-footer rf-pink">↳ Yuktha's end goal</div>
+    </div>
+  </div>
+  <div class="profile-bar reveal">
+    <div class="pb-title">Developer Profile</div>
+    <div class="bar-row"><span class="bar-label">Frontend</span><div class="bar-track"><div class="bar-fill bf-lav" data-w="88"></div></div><span class="bar-pct">88%</span></div>
+    <div class="bar-row"><span class="bar-label">Backend</span><div class="bar-track"><div class="bar-fill bf-mint" data-w="72"></div></div><span class="bar-pct">72%</span></div>
+    <div class="bar-row"><span class="bar-label">Full Stack</span><div class="bar-track"><div class="bar-fill bf-pink" data-w="78"></div></div><span class="bar-pct">78%</span></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── METRICS ── -->
+<section class="section reveal" id="metrics">
+  <div class="sec-tag">Impact</div>
+  <h2 class="sec-title">By the<br><em>Numbers</em></h2>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-num"><span class="count" data-target="4">0</span><span>+</span></div>
+      <div class="metric-label">Projects Built</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num"><span class="count" data-target="10">0</span><span>+</span></div>
+      <div class="metric-label">Technologies</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num"><span class="count" data-target="1">0</span><span></span></div>
+      <div class="metric-label">Internship at Titan</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-num"><span class="count" data-target="3">0</span><span>+</span></div>
+      <div class="metric-label">Years Coding</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── SKILLS ── -->
+<section class="section reveal" id="skills">
+  <div class="sec-tag">Technologies</div>
+  <h2 class="sec-title">Technical<br><em>Arsenal</em></h2>
+  <div class="skills-cloud">
+    <span class="sk">HTML5</span><span class="sk">CSS3</span><span class="sk">JavaScript</span>
+    <span class="sk">React.js</span><span class="sk">Node.js</span><span class="sk">Python</span>
+    <span class="sk">Java</span><span class="sk">C</span><span class="sk">C++</span>
+    <span class="sk">MySQL</span><span class="sk">REST APIs</span><span class="sk">Responsive Design</span>
+    <span class="sk">Git</span><span class="sk">GitHub</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROJECTS ── -->
+<section class="section reveal" id="projects">
+  <div class="sec-tag">Work</div>
+  <h2 class="sec-title">Engineered<br><em>Systems</em></h2>
+  <div class="proj-list">
+    <div class="proj-row">
+      <div class="pn">01</div>
+      <div>
+        <div class="pt-name">ExperimentHub</div>
+        <div class="pt-desc">A full-stack platform for organizing, cataloguing, and exploring scientific experiments with a collaborative, interactive interface for researchers.</div>
+        <div class="proj-tags"><span class="tag t-lav">Full Stack</span><span class="tag t-mint">HTML</span><span class="tag t-sky">Node.js</span><span class="tag t-peach">MySQL</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-row">
+      <div class="pn">02</div>
+      <div>
+        <div class="pt-name">AI Task Manager</div>
+        <div class="pt-desc">Smart productivity app powered by AI — intelligently prioritizes, schedules, and tracks to-dos based on context and urgency patterns.</div>
+        <div class="proj-tags"><span class="tag t-lav">Frontend</span><span class="tag t-pink">AI / ML</span><span class="tag t-mint">HTML</span><span class="tag t-sky">JavaScript</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-row">
+      <div class="pn">03</div>
+      <div>
+        <div class="pt-name">Sign Language Translator</div>
+        <div class="pt-desc">Real-time sign language recognition using computer vision and ML models, wrapped in an accessible and responsive web interface.</div>
+        <div class="proj-tags"><span class="tag t-mint">Computer Vision</span><span class="tag t-pink">ML</span><span class="tag t-lav">Frontend</span><span class="tag t-sky">Python</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+    <div class="proj-row">
+      <div class="pn">04</div>
+      <div>
+        <div class="pt-name">Emotion Chatbot</div>
+        <div class="pt-desc">Conversational AI that detects user sentiment and responds with contextual empathy — combining NLP backend with a clean, intuitive chat UI.</div>
+        <div class="proj-tags"><span class="tag t-pink">NLP</span><span class="tag t-lav">Frontend</span><span class="tag t-sky">Backend</span><span class="tag t-peach">Python</span></div>
+      </div>
+      <div class="proj-arr">↗</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── EXPERIENCE ── -->
+<section class="section reveal" id="experience">
+  <div class="sec-tag">Journey</div>
+  <h2 class="sec-title">Experience &amp;<br><em>Education</em></h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-dot ed-lav"></div>
+      <div class="exp-type">Internship · 2025</div>
+      <div class="exp-title">Web Developer Intern</div>
+      <div class="exp-co">Titan Company Limited</div>
+      <div class="exp-desc">Built and maintained production web features using HTML, CSS, and JavaScript. Gained hands-on experience working within a professional engineering team at one of India's most iconic brands.</div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-dot ed-mint"></div>
+      <div class="exp-type">Degree · Ongoing</div>
+      <div class="exp-title">B.Tech — Computer Science</div>
+      <div class="exp-co">Bangalore, Karnataka</div>
+      <div class="exp-desc">Focused on web technologies, AI/ML, algorithms, and software engineering. Building real-world projects that push the limits of what's possible on the modern web.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CONTACT ── -->
+<section class="section reveal" id="contact">
+  <div class="sec-tag">Contact</div>
+  <h2 class="sec-title">Building something<br><em>meaningful?</em></h2>
+  <div class="contact-inner">
+    <p>Open to internships, freelance projects, and full-time opportunities. If you have an interesting project or role, let's make it real.</p>
+    <div class="clinks">
+      <a href="https://github.com/yuktha2506" target="_blank" class="clink"><span class="dot"></span>GitHub</a>
+      <a href="https://www.linkedin.com/in/yuktha-shree-p-3081b92a4/" target="_blank" class="clink"><span class="dot"></span>LinkedIn</a>
+    </div>
+    <a href="mailto:yukthashree456@gmail.com" class="email-big">yukthashree456@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <span> Made by Yuktha Shree P</span>
+</footer>
+
 </div>
 </body>
 </html>
