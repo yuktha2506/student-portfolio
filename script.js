@@ -121,3 +121,4 @@ function closeCaseStudy(e) {
   if (csOverlay) csOverlay.classList.remove('active');
   document.body.style.overflow = '';
 }
+setTimeout(function(){var l=document.getElementById('loader');if(l)l.classList.add('hide');},3000);
