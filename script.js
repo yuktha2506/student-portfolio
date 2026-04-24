@@ -101,3 +101,23 @@ document.querySelectorAll('.metrics-grid').forEach(g=>cio.observe(g));
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});});
 });
+/* CASE STUDY MODAL */
+function openCaseStudy(id) {
+  var csOverlay = document.getElementById('cs-overlay');
+  if (!csOverlay) return;
+  document.querySelectorAll('.cs-content').forEach(function(el) {
+    el.classList.remove('active');
+  });
+  var target = document.getElementById(id);
+  if (target) target.classList.add('active');
+  csOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCaseStudy(e) {
+  var csOverlay = document.getElementById('cs-overlay');
+  var closeBtn = document.getElementById('cs-modal-close');
+  if (e && e.target !== csOverlay && e.target !== closeBtn) return;
+  if (csOverlay) csOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
