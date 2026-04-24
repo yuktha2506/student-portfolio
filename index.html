@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 <script defer src="script.js"></script>
-<link rel="icon" type="image/x-icon" href="logo.ICO">
+<link rel="icon" type="image/x-icon" href="logo.jpeg">
 </head>
 <body>
 
@@ -389,65 +389,109 @@
   </div>
 </section>
 
-<style>
-.skills-icon-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:14px;}
-.sk-card{background:rgba(255,255,255,0.035);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:28px 16px 20px;display:flex;flex-direction:column;align-items:center;gap:16px;transition:border-color .25s,transform .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden;}
-.sk-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(196,181,253,0.07) 0%,transparent 70%);opacity:0;transition:opacity .3s;}
-.sk-card:hover::before{opacity:1;}
-.sk-card:hover{border-color:rgba(196,181,253,0.25);transform:translateY(-5px);box-shadow:0 16px 40px rgba(196,181,253,0.07);}
-.sk-icon{width:48px;height:48px;}
-.sk-icon svg{width:100%;height:100%;}
-.sk-label{font-family:'Geist Mono',monospace;font-size:11px;font-weight:500;color:#6b6a85;letter-spacing:0.3px;text-align:center;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:5px;padding:4px 10px;width:100%;}
-.sk-card:hover .sk-label{color:#c4b5fd;border-color:rgba(196,181,253,0.2);background:rgba(196,181,253,0.07);}
-</style>
 
 <div class="divider"></div>
-
 <!-- ── PROJECTS ── -->
 <section class="section reveal" id="projects">
   <div class="sec-tag">Work</div>
   <h2 class="sec-title">Engineered<br><em>Systems</em></h2>
+
   <div class="proj-list">
+
+    <!-- PROJECT 01 -->
     <div class="proj-row">
       <div class="pn">01</div>
       <div>
         <div class="pt-name">ExperimentHub</div>
-        <div class="pt-desc">A full-stack platform for organizing, cataloguing, and exploring scientific experiments with a collaborative, interactive interface for students and teachers.</div>
-        <div class="proj-tags"><span class="tag t-lav">Full Stack</span><span class="tag t-mint">HTML</span><span class="tag t-sky">Node.js</span><span class="tag t-peach">MySQL</span></div>
+        <div class="pt-desc">
+          A full-stack platform for organizing, cataloguing, and exploring scientific experiments with a collaborative interface.
+        </div>
+
+        <div class="proj-tags">
+          <span class="tag t-lav">Full Stack</span>
+          <span class="tag t-mint">HTML</span>
+          <span class="tag t-sky">Node.js</span>
+          <span class="tag t-peach">MySQL</span>
+        </div>
+
+        <button class="case-btn" onclick="openCaseStudy('cs-01')">
+          Case Study →
+        </button>
       </div>
       <div class="proj-arr">↗</div>
     </div>
+
+    <!-- PROJECT 02 -->
     <div class="proj-row">
       <div class="pn">02</div>
       <div>
         <div class="pt-name">AI Task Manager</div>
-        <div class="pt-desc">Smart productivity app powered by AI — intelligently prioritizes, schedules, and tracks to-dos based on context and urgency patterns.</div>
-        <div class="proj-tags"><span class="tag t-lav">Frontend</span><span class="tag t-pink">AI / ML</span><span class="tag t-mint">HTML</span><span class="tag t-sky">JavaScript</span></div>
+        <div class="pt-desc">
+          Smart productivity app powered by AI that prioritizes and schedules tasks intelligently.
+        </div>
+
+        <div class="proj-tags">
+          <span class="tag t-lav">Frontend</span>
+          <span class="tag t-pink">AI / ML</span>
+          <span class="tag t-mint">HTML</span>
+          <span class="tag t-sky">JavaScript</span>
+        </div>
+
+        <button class="case-btn" onclick="openCaseStudy('cs-02')">
+          Case Study →
+        </button>
       </div>
       <div class="proj-arr">↗</div>
     </div>
+
+    <!-- PROJECT 03 -->
     <div class="proj-row">
       <div class="pn">03</div>
       <div>
         <div class="pt-name">Sign Language Translator</div>
-        <div class="pt-desc">Real-time sign language recognition using computer vision and ML models, wrapped in an accessible and responsive web interface.</div>
-        <div class="proj-tags"><span class="tag t-mint">Computer Vision</span><span class="tag t-pink">ML</span><span class="tag t-lav">Frontend</span><span class="tag t-sky">Python</span></div>
+        <div class="pt-desc">
+          Real-time sign language recognition using computer vision and ML.
+        </div>
+
+        <div class="proj-tags">
+          <span class="tag t-mint">Computer Vision</span>
+          <span class="tag t-pink">ML</span>
+          <span class="tag t-lav">Frontend</span>
+          <span class="tag t-sky">Python</span>
+        </div>
+
+        <button class="case-btn" onclick="openCaseStudy('cs-03')">
+          Case Study →
+        </button>
       </div>
       <div class="proj-arr">↗</div>
     </div>
+
+    <!-- PROJECT 04 -->
     <div class="proj-row">
       <div class="pn">04</div>
       <div>
         <div class="pt-name">Emotion Chatbot</div>
-        <div class="pt-desc">Conversational AI that detects user sentiment and responds with contextual empathy — combining NLP backend with a clean, intuitive chat UI.</div>
-        <div class="proj-tags"><span class="tag t-pink">NLP</span><span class="tag t-lav">Frontend</span><span class="tag t-sky">Backend</span><span class="tag t-peach">Python</span></div>
+        <div class="pt-desc">
+          Conversational AI that detects sentiment and responds with contextual empathy.
+        </div>
+
+        <div class="proj-tags">
+          <span class="tag t-pink">NLP</span>
+          <span class="tag t-lav">Frontend</span>
+          <span class="tag t-sky">Backend</span>
+          <span class="tag t-peach">Python</span>
+        </div>
+
+        <button class="case-btn" onclick="openCaseStudy('cs-04')">
+          Case Study →
+        </button>
       </div>
       <div class="proj-arr">↗</div>
     </div>
+
   </div>
 </section>
-
-<div class="divider"></div>
 
 <!-- ── EXPERIENCE ── -->
 <section class="section reveal" id="experience">
@@ -491,6 +535,151 @@
   <span> Made by Yuktha Shree P</span>
 </footer>
 
+</div>
+
+<!-- ── CASE STUDY MODAL ── -->
+<div id="cs-overlay" onclick="closeCaseStudy(event)">
+  <div id="cs-modal">
+    <button id="cs-modal-close" onclick="closeCaseStudy()">✕</button>
+
+    <!-- CS 01: ExperimentHub -->
+    <div class="cs-content" id="cs-01">
+      <div class="cs-modal-meta">
+        <span class="cs-modal-num">01</span>
+        <span class="cs-modal-cat">Full Stack · Education Tool</span>
+      </div>
+      <h2 class="cs-modal-title">ExperimentHub</h2>
+      <p class="cs-modal-summary">A collaborative platform built to solve the chaos of managing scientific experiments — bringing structure, discoverability, and real-time collaboration for students.</p>
+      <div class="cs-modal-blocks">
+        <div class="cs-modal-block">
+          <div class="cs-label">Problem</div>
+          <p>Students lacked a centralized system to organize, view, and understand experiments.Students struggled alot in understanding and performing the experiments.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Solution</div>
+          <p>Built a full-stack web platform with structured experiment entries, search &amp; filter by tag, and a clean UI for browsing and understanding experiments collaboratively with teachers.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Tech Decisions</div>
+          <p>Node.js + MySQL for relational data modelling across experiments, results, and users. Plain HTML ensured maximum accessibility without framework overhead.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Outcome</div>
+          <p>Delivered a working multi-user platform with persistent data, full CRUD operations, and a responsive interface ready for real-world research team use.</p>
+        </div>
+      </div>
+      <div class="cs-modal-tags">
+        <span class="tag t-lav">Full Stack</span>
+        <span class="tag t-mint">HTML</span>
+        <span class="tag t-pink">JavaScript</span>
+        <span class="tag t-sky">Node.js</span>
+        <span class="tag t-peach">MySQL</span>
+      </div>
+    </div>
+
+    <!-- CS 02: AI Task Manager -->
+    <div class="cs-content" id="cs-02">
+      <div class="cs-modal-meta">
+        <span class="cs-modal-num">02</span>
+        <span class="cs-modal-cat">Frontend · Productivity</span>
+      </div>
+      <h2 class="cs-modal-title">AI Task Manager</h2>
+      <p class="cs-modal-summary">A smart to-do app that goes beyond lists — using AI to understand urgency, context, and patterns to help users prioritize what actually matters.</p>
+      <div class="cs-modal-blocks">
+        <div class="cs-modal-block">
+          <div class="cs-label">Problem</div>
+          <p>Traditional task managers treat all tasks equally. Users feel overwhelmed because tools don't help them decide what to tackle first, leading to decision fatigue.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Solution</div>
+          <p>Integrated an AI layer that analyses task descriptions for urgency signals and contextual cues, then re-orders and highlights tasks dynamically.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Tech Decisions</div>
+          <p>Kept the stack lightweight with vanilla JavaScript for speed and portability. AI logic runs client-side to avoid latency, keeping the experience snappy on all connections.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Outcome</div>
+          <p>Created a fully interactive productivity app with intelligent prioritisation, clean UX, and real-time task reordering — demonstrating applied AI in everyday tooling.</p>
+        </div>
+      </div>
+      <div class="cs-modal-tags">
+        <span class="tag t-pink">AI / ML</span>
+        <span class="tag t-mint">HTML</span>
+        <span class="tag t-sky">JavaScript</span>
+      </div>
+    </div>
+
+    <!-- CS 03: Sign Language Translator -->
+    <div class="cs-content" id="cs-03">
+      <div class="cs-modal-meta">
+        <span class="cs-modal-num">03</span>
+        <span class="cs-modal-cat">Computer Vision · Accessibility</span>
+      </div>
+      <h2 class="cs-modal-title">Sign Language Translator</h2>
+      <p class="cs-modal-summary">A real-time accessibility tool bridging the communication gap between sign language users and others — using a webcam and ML to translate gestures instantly.</p>
+      <div class="cs-modal-blocks">
+        <div class="cs-modal-block">
+          <div class="cs-label">Problem</div>
+          <p>Deaf and hard-of-hearing individuals face communication barriers daily. Existing tools were expensive, required specialised hardware, or only worked offline.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Solution</div>
+          <p>Built a browser-accessible app that captures live webcam input, processes frames through a trained ML model for gesture classification, and renders translated text in real time.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Tech Decisions</div>
+          <p>Python powered the ML pipeline and inference. A responsive frontend ensured it worked across devices. Chose computer vision over wearable sensors for zero-hardware accessibility.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Outcome</div>
+          <p>Delivered a working prototype with accurate gesture detection, sub-second translation latency, and a UI designed for accessibility-first interaction.</p>
+        </div>
+      </div>
+      <div class="cs-modal-tags">
+        <span class="tag t-mint">Computer Vision</span>
+        <span class="tag t-pink">ML</span>
+        <span class="tag t-lav">Frontend</span>
+        <span class="tag t-sky">Python</span>
+      </div>
+    </div>
+
+    <!-- CS 04: Emotion Chatbot -->
+    <div class="cs-content" id="cs-04">
+      <div class="cs-modal-meta">
+        <span class="cs-modal-num">04</span>
+        <span class="cs-modal-cat">NLP · Conversational AI</span>
+      </div>
+      <h2 class="cs-modal-title">Emotion Chatbot</h2>
+      <p class="cs-modal-summary">A conversational AI that listens not just to what you say, but how you feel — detecting emotional tone and responding with contextual empathy rather than scripted replies.</p>
+      <div class="cs-modal-blocks">
+        <div class="cs-modal-block">
+          <div class="cs-label">Problem</div>
+          <p>Most chatbots respond to keywords, not emotions. They feel robotic when users are frustrated or anxious — breaking trust and degrading the experience.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Solution</div>
+          <p>Built a chatbot that runs sentiment analysis on each message using NLP, classifies the emotional state, and tailors its language, tone, and response strategy accordingly.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Tech Decisions</div>
+          <p>Python handled NLP processing and emotion classification on the backend. A minimal chat UI kept focus on the conversation. REST API connected both layers cleanly.</p>
+        </div>
+        <div class="cs-modal-block">
+          <div class="cs-label">Outcome</div>
+          <p>Produced a full-stack AI chat app with measurable sentiment accuracy, empathetic reply logic, and a polished UI — showcasing applied NLP in human-computer interaction.</p>
+        </div>
+      </div>
+      <div class="cs-modal-tags">
+        <span class="tag t-pink">NLP</span>
+        <span class="tag t-lav">Frontend</span>
+        <span class="tag t-sky">Backend</span>
+        <span class="tag t-peach">Python</span>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>
 </body>
 </html>
